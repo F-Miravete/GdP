@@ -93,7 +93,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el desarrollo y la implementación de un prototipo de un dispositivo capaz de convertir diferentes formatos de audio digital en una señal analogica. Tendrá un presupuesto preliminar estimado de 600 hs de trabajo y \textcolor{black}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el desarrollo y la implementación de un prototipo de un dispositivo capaz de convertir diferentes formatos de audio digital en una señal analógica. Tendrá un presupuesto preliminar estimado de 600 hs de trabajo y \textcolor{black}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -134,6 +134,9 @@ Por otra parte, hoy existe una amplia variedad de fuentes de audio digital dispo
 	\item Puertos con capacidad de leer otros formatos como PCM, DSD, MQA, DoP. 
 \end{itemize}
 
+La codificación sin pérdidas permite desde los datos digitales decodificados reproducir la información exactamente igual a la original.
+La codificacion con pérdidas aprovecha la característica del oido humano que enmascara frecuencias cercanas con distintas amplitudes. Esta información no es percibida por el oido, por lo tanto no se codifica.    
+
 Por las distintas fuentes enumeradas se detecta la necesidad de contar con un único dispositivo que pueda convertir varios de estos formatos en sonido analógico. Esto permitirá reducir el uso de múltiples equipos de interface para cada fuente de audio digital.
 
 El objetivo de este proyecto será diseñar el hardware electrónico de un dispositivo DAC que pueda leer al menos 3 tipos de fuentes de audio digital, incluya un display alfanumérico o gráfico que permita visualizar la operación del dispositivo, cuente con botones de operación según lo que se especifique en su diseño y tenga una salida analógica para la señal de audio.
@@ -142,12 +145,12 @@ En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistem
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=0.9\textwidth]{./Figuras/DAC.png}
+\includegraphics[width=0.95\textwidth]{./Figuras/DAC.png}
 \caption{Diagrama en bloques del sistema}
 \label{fig:diagBloques}
 \end{figure}
 
-\vspace{25px}
+\vspace{2cm}
 %\end{consigna}
 
 
@@ -181,8 +184,13 @@ Usuario final & Público general   & -             	& -       	\\ \hline
 \label{sec:proposito}
 
 \begin{consigna}{black}
-El propósito de este proyecto es proveer un producto que pueda insertarse dentro de un sistema de audio HiFi, permita sumar fuentes de audio alternativas al reproductor de discos o a la bandeja giradiscos, genere una base de conocimiento en tecnologías de procesamiento de audio digital y desarrolle procesos, procedimientos y experiencia local en la industria del audio. 
+El propósito de este proyecto es proveer un producto que pueda insertarse dentro de un sistema de audio HiFi, permitiendo sumar fuentes de audio alternativas a las mas populares como el reproductor de discos o la bandeja giradiscos.
+ 
+Otro propósito es generar una base de conocimiento en tecnologías de procesamiento de audio digital y el desarrollo de procesos, procedimientos y experiencia local en la industria del audio. 
 \end{consigna}
+
+
+
 
 
 \section{4. Alcance del proyecto}
@@ -212,14 +220,16 @@ Quedan fuera del alcance los siguientes items:
 \label{sec:supuestos}
 
 \begin{consigna}{black}
-``Para el desarrollo del presente proyecto se supone que: ...''
+Para el desarrollo del presente proyecto se supone que:
 
 \begin{itemize}
-	\item Supuesto 1
-	\item Supuesto 2...
+	\item[•]Se cuenta con la información teórica mínima y necesaria referida a los protocolos y formatos de audio digital. 
+	\item[•]Se tiene acceso a instrumentos y herramientas para el desarrollo del producto (kit de desarrollos, osciloscopios, analizadores, etc.).
+	\item[•]Se cuenta con un mínimo de dedicación de 10 horas semanales para el proyecto.
+	\item[•]Se tiene disponibilidad de todos los componentes electrónicos que resulten del diseño.
+	\item[•]Se realizarán las compras en proveedores locales siempre que sea posible.  
 \end{itemize}
 
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
 \end{consigna}
 
 \section{6. Requerimientos}
