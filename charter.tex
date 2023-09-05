@@ -7,7 +7,7 @@ codirector, % Uncomment to add a codirector to the title page
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Título del proyecto} 
+\titulo{DAC Digital Audio Converter} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 \posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -17,18 +17,19 @@ codirector, % Uncomment to add a codirector to the title page
 %\posgrado{Maestría en Internet de las cosas}
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
-\autor{Nombre del Autor} 
+\autor{Flavio Miravete} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Nombre del Director}
-\pertenenciaDirector{pertenencia} 
+\director{Dr. Ing. Anibal Zanini}
+\pertenenciaDirector{FIUBA} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
-\codirector{John Doe} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
-\pertenenciaCoDirector{FIUBA}
+%\codirector{John Doe} % para que aparezca en la portada se debe descomentar la opción 
+% codirector en el documentclass
+%\pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Nombre del cliente}
-\empresaCliente{Empresa del cliente}
+\cliente{CESE}
+\empresaCliente{LSE - FIUBA}
 
 % Nombre y pertenencia de los jurados, se pueden usar el cualquier lugar del documento con el comando \jurunoname, \jurdosname y \jurtresname y \perteunoname, \pertedosname y \pertetresname.
 \juradoUno{Nombre y Apellido (1)}
@@ -38,9 +39,9 @@ codirector, % Uncomment to add a codirector to the title page
 \juradoTres{Nombre y Apellido (3)}
 \pertenenciaJurTres{pertenencia (3)}
  
-\fechaINICIO{30 de abril de 2021}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{18 de junio de 2021} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{15 de mayo de 2022}	%Fecha de defensa pública del trabajo final
+\fechaINICIO{22 de agosto de 2023}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{24 de octubre de 2023} 	%Fecha de final de cursada de GdP
+\fechaFINALTrabajo{1 de agosto de 2024}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -68,8 +69,8 @@ codirector, % Uncomment to add a codirector to the title page
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
-0      & Creación del documento                                 &\fechaInicioName \\ \hline
-%1      & Se completa hasta el punto 4 inclusive                 & dd/mm/aaaa \\ \hline
+0      & Creación del documento                                 & 22/08/2023 \\ \hline
+1      & Se completa hasta el punto 5 inclusive                 & 04/09/2023 \\ \hline
 %2      & Se completa hasta el punto 7 inclusive
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
@@ -92,7 +93,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en \textcolor{red}{la implementación de un prototipo de un sistema de control de temperatura de un calefón}, y tendrá un presupuesto preliminar estimado de \textcolor{red}{600} h de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el desarrollo y la implementación de un prototipo de un dispositivo capaz de convertir diferentes formatos de audio digital en una señal analogica. Tendrá un presupuesto preliminar estimado de 600 hs de trabajo y \textcolor{black}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -115,52 +116,43 @@ Se adjunta a esta acta la planificación inicial.
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
+%\begin{consigna}{black}
+Cualquier dispositivo que actúe como fuente de sonido digital como un reproductor de CD o Blu-ray, un TV digital, una consola de juegos, un teléfono móvil, un reproductor de música portátil o una computadora necesitará un DAC, ya sea integrado o conectado, para convertir su audio digital a analógico antes de ser amplificado y enviado a un parlante o auricular.
 
-\begin{consigna}{red} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección. En cada entrega parcial deben eliminar los comandos begin y end del bloque consigna de las secciones que hayan completado.
+Los datos de audio digital se pueden almacenar en una variedad de frecuencias de muestreo, profundidades de bits, formatos de codificación y compresión, pero sin importar cómo se haga, el trabajo de un DAC es convertir a partir del formato binario la señal de audio en analógica intentando conservarla lo más parecida a la grabación de audio original.
+ 
+En los últimos años han aparecido dispositivos DAC que se insertan en la cadena de audio de cualquier sistema de sonido HiFi en ambientes como producción musical, estudios de grabación, hogar y preferidos por el público audiófilo. 
 
-El objetivo es que el lector en una o dos páginas entienda de qué trata el proyecto y cuáles son sus desafíos, cuál es la motivación para realizarlo y su importancia.
-
-Se debe introducir el contexto del proyecto, el estado del arte en la temática, describir la propuesta de valor, cúal es el problema que atiende y cuál es la solución que se propone. Se debe dar una descripción funcional de la solución que incluya un diagrama en bloques.
-
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
+Por otra parte, hoy existe una amplia variedad de fuentes de audio digital disponibles, por ejemplo:
 
 \begin{itemize}
-	\item ¿Cuál es el contexto del proyecto, es un emprendimiento personal, un proyecto para una empresa, es parte del programa de vinculación con empresas del posgrado?
-	\item ¿Existen o aplican condiciones especiales al proyecto, financiamiento de algún programa público o privado, acuerdos de confidencialidad, acuerdos sobre la propiedad intelectual de los entregables u otros?
-	\item ¿Cómo se compara la solución propuesta con el estado del arte en el campo de aplicación? ¿En qué aspectos destaca?
-	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-	\item ¿En qué estado del ciclo de vida está la solución que se propone?
-	\item ¿Cuáles son las características del cliente (el adoptante de los entregables del proyecto) qué valora, qué necesita?
-	\item ¿Por dónde pasa la innovación?
+	\item Archivos con codificación sin pérdida (FLAC, WAV, AIFF, APE).
+	\item Archivos con codificación con pérdida (AAC, MP3, WMA, OGG).
+	\item Puerto S/PDIF.
+	\item Puerto AES-EBU.
+	\item Dispositivos Bluetooth (smartphones).
+	\item Puertos con capacidad de leer otros formatos como PCM, DSD, MQA, DoP. 
 \end{itemize}
 
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y descripción funcional de la solución propuesta.
+Por las distintas fuentes enumeradas se detecta la necesidad de contar con un único dispositivo que pueda convertir varios de estos formatos en sonido analógico. Esto permitirá reducir el uso de múltiples equipos de interface para cada fuente de audio digital.
 
-Las figuras se deben mencionar en el texto ANTES de que aparezcan con una frase como la siguiente: ``En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''.  La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+El objetivo de este proyecto será diseñar el hardware electrónico de un dispositivo DAC que pueda leer al menos 3 tipos de fuentes de audio digital, incluya un display alfanumérico o gráfico que permita visualizar la operación del dispositivo, cuente con botones de operación según lo que se especifique en su diseño y tenga una salida analógica para la señal de audio.
+  
+En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa un esquema lógico de los componentes y funciones mas importantes que podemos encontrar en un DAC. Luego existen combinaciones entre las interfaces que comunmente se utilizan y los formatos  de audio que se transfieren a través de ellas.
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.5\textwidth]{./Figuras/diagBloques.png}
+\includegraphics[width=0.9\textwidth]{./Figuras/DAC.png}
 \caption{Diagrama en bloques del sistema}
 \label{fig:diagBloques}
 \end{figure}
 
 \vspace{25px}
+%\end{consigna}
 
-El tamaño de la tipografía en TODAS las figuras debe ser adecuado para que NO pase lo que ocurre acá, donde el lector debe esforzarse para poder leer el texto. Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama, preferentemente en la gama de colores pastel.
-\end{consigna}
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
-
-\begin{consigna}{red} % este comando se debe borrar para la entrega, junto con la contraparte \end{consigna}{red} 
- 
-\textbf{Nota importante:} borrar esto y todas las consignas en color rojo antes de entregar este documento). Esto se hace eliminando el par de comandos que forman el bloque consigna, \verb!\begin{consigna}{red}! y \verb!\end{consigna}{red}! del código. 
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos. Si se considera que una persona cumple dos o más roles, entonces solo dejarla en el rol más importante. 
-
-Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente. Si una persona es el Responsable, no debe ser colocado también como miembro del equipo.
-
 
 \begin{table}[ht]
 %\caption{Identificación de los interesados}
@@ -169,66 +161,57 @@ Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
 Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
+Impulsor      & -                 & -               & -         \\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
+Colaboradores & A definir         &              	&        	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director Trabajo final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+Usuario final & Público general   & -             	& -       	\\ \hline
 \end{tabularx}
 \end{table}
 
-El Director suele ser uno de los Orientadores.
-
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-Es deseable listar a continuación las principales características de cada interesado.
- 
-Por ejemplo:
 \begin{itemize}
-	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
-	\item Orientador: María Gómez va a poder ayudar mucho con la definición de los requerimientos.
+	\item Responsable: es también el impulsor del proyecto. Posee conocimientos generales de audio y la viva intencion de fundar una empresa de productos de este rubro. 
+	\item Colaboradores: en este momento está abierta la búsqueda de colaboradores que podrán sumarse con el rol de codirector o como parte del equipo.
+	\item Orientador: es una persona de muy extensa experiencia en el ámbito académico e industrial, entre varios temas de su dominio, es experto en temas de control automático y en procesamiento de señales digitales.
+	\item Usuario final: es una persona entusiasta del audio o audiófilo.
 \end{itemize}
-
-\end{consigna} % este comando se debe borrar para la entrega, junto con la contraparte \begin{consigna}{red}
-
-
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red}
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
-
-Se recomienda que sea solo un párrafo que empiece diciendo ``El propósito de este proyecto es...''.
+\begin{consigna}{black}
+El propósito de este proyecto es proveer un producto que pueda insertarse dentro de un sistema de audio HiFi, permita sumar fuentes de audio alternativas al reproductor de discos o a la bandeja giradiscos, genere una base de conocimiento en tecnologías de procesamiento de audio digital y desarrolle procesos, procedimientos y experiencia local en la industria del audio. 
 \end{consigna}
+
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
-
-Se refiere al trabajo a hacer para entregar el producto o resultado especificado. 
-
-Explicitar todo lo quede comprendido dentro del alcance del proyecto.
-
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
-
+\begin{consigna}{black}
+Se define el siguiente alcance para el proyecto:
+\begin{itemize}
+	\item[•]Diseño y fabricación de un prototipo del hardware electrónico del producto.  
+	\item[•]Inclusión de una interface USB para la lectura o recepción de audio digital. 
+	\item[•]Inclusión de una interface serie para la recepción de audio digital por el protocolo SPDIF.
+	\item[•]Inclusión de una interface Bluetooth para la recepción de audio.
+	\item[•]inclusión de un display y teclas de operación.
+	\item[•]Desarrollo del firmware para la operación y manejo de un formato digital por interface.
+	\item[•]Documentación de los procesos de desarrollo y software.
+	\item[•]Diseño y desarrollo de los testeos.  
+\end{itemize}	
+Quedan fuera del alcance los siguientes items:
+\begin{itemize}
+	\item[•]Desarrollo de firmware para el manejo de formatos de audio digital con pérdidas (codificación/decodificación perceptiva).  
+	\item[•]Diseños mecanicos del dispositivo (gabinetes o envolturas). 	
+\end{itemize}
 \end{consigna}
 
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red}
+\begin{consigna}{black}
 ``Para el desarrollo del presente proyecto se supone que: ...''
 
 \begin{itemize}
