@@ -233,67 +233,119 @@ Para el desarrollo del presente proyecto se supone que:
 \section{6. Requerimientos}
 \label{sec:requerimientos}
 
-\begin{consigna}{red}
+\begin{consigna}{black}
 Los requerimientos a considerar para el desarrollo del proyecto son los siguientes.
 
 \begin{enumerate}
-	\item Requerimientos funcionales
+	\item Requerimientos de interfaces digitales.
 		\begin{enumerate}
-			\item El sistema debe...
-			\item Tal componente debe...
-			\item El usuario debe poder...
+			\item El dispositivo debe contar con una entrada digital USB 2.0 tipo B. 
+			\item El dispositivo debe contar con una entrada digital S/PDIF con conexión coaxil. Como alternativa deseable puede agregarse a la conexión coaxil una conexión óptica (TOSLINK).
+			\item El dispositivo debe contar con una conexión Bluetooth con capacidad para recibir un stream de audio.   
 		\end{enumerate}
-	\item Requerimientos de documentación
+	\item Requerimientos de los formatos de audio.
 		\begin{enumerate}
-			\item Requerimiento 1
-			\item Requerimiento 2 (prioridad menor)
+			\item El dispositivo debe procesar un stream de audio en formato PCM (Pulse Code Modulation) a 44,1/48/88,2/96 KHz.
+			\item El dispositivo debe procesar un stream de audio en formato DSD (Direct Stream Digital) a 2,8/3,1/5,6 MHz.
+			\item El dispositivo debe procesar al menos los siguientes formatos sobre Bluetooth: SBC, AAC, aptX.  
 		\end{enumerate}
-	\item Requerimiento de testing...
-	\item Requerimientos de la interfaz...
-	\item Requerimientos interoperabilidad...
-	\item etc...
+	\item Requerimientos de operación.
+		\begin{enumerate}		
+			\item El dispositivo debe permitir la selección entre las 3 interfaces de audio disponibles por medio de un pulsador. 	
+			\item La interface seleccionada, el formato que se esté reproduciendo y sus características deben ser indicados a través de un display alfanumérico.
+			\item El dispositivo debe contar con una perilla rotativa para control de volumen. 
+			\item El display alfanumérico debe indicar el estado y progreso del proceso de apareamiento de un dispositivo Bluetooth.
+		\end{enumerate}
+	\item Requerimientos de alimentación y otros.
+		\begin{enumerate}
+			\item El dispositivo debe contar con una entrada para alimentación de 5 VDC.
+			\item El dispositivo debe contar con una salida analógica stereo, no balanceada y de amplitud máxima 2 Vpp.
+		\end{enumerate}
+	\item Requerimientos del prototipo.
+		\begin{enumerate}
+			\item El prototipo debe ser modular (es aceptable un módulo por interface).
+			\item Los módulos pueden ser circuitos impresos de diseño propio o comerciales.
+		\end{enumerate}
+	\item Requerimientos de documentación y registro.
+		\begin{enumerate}
+			\item Todos los desarrollos de hardware y firmware deben estar guardados en repositorio y bajo control de versión.
+			\item Debe desarrollarse una memoria técnica del prototipo.
+			\item Deben documentarse todas las pruebas tecnicas diseñadas y sus conclusiones. 
+		\end{enumerate}	
 \end{enumerate}
-
-Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
-
-Indicar claramente cuál es la prioridad entre los distintos requerimientos y si hay requerimientos opcionales. 
-
-No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!
-
-Y al escribirlos seguir las siguientes reglas:
-\begin{itemize}
-	\item Ser breve y conciso (nadie lee cosas largas). 
-	\item Ser específico: no dejar lugar a confusiones.
-	\item Expresar los requerimientos en términos que sean cuantificables y medibles.
-\end{itemize}
 
 \end{consigna}
 
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-\begin{consigna}{red}
-Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
+\begin{consigna}{black}
+A continuación se enumeran las historias de usuarios identificadas. Para todos los casos se ha realizado una ponderación con el siguiente criterio:
+\begin{enumerate}
+	\item Dificultad del trabajo a realizar.
+	\begin{itemize}
+		\item BAJO = 1
+		\item MEDIO = 5
+		\item ALTO = 13
+	\end{itemize}	
+	\item Complejidad del trabajo a realizar.
+	\begin{itemize}
+		\item BAJO = 1
+		\item MEDIO = 5
+		\item ALTO = 13
+	\end{itemize}	
+	\item Riesgo del trabajo a realizar.
+	\begin{itemize}
+		\item BAJO = 1
+		\item MEDIO = 5
+		\item ALTO = 13
+	\end{itemize}	
+\end{enumerate}
 
-El formato propuesto es: "como [rol] quiero [tal cosa] para [tal otra cosa]."
+Historias de usuarios:
+\begin{itemize}
+	\item[•] Como amante de la música en alta calidad deseo escuchar mis canciones favoritas que guardo en mi computadora con mi sistema de audio HiFi.
+	\begin{itemize}
+	\item Dificultad: 5
+	\item Complejidad: 13
+	\item Riesgo: 13
+	\item Story Points: 34
+	\end{itemize}
+	\item[•] Como consumidor de plataformas de música por streaming quiero reproducir mis caciones desde el teléfono y poder escucharlas en mi sistema de audio HiFi.
+	\begin{itemize}
+	\item Dificultad: 5
+	\item Complejidad: 13
+	\item Riesgo: 5
+	\item Story Points: 21
+	\end{itemize}
+	\item[•] Como fanatico de las películas y los recitales deseo conectar el audio de mi televisor a mi sistema de sonido HiFi sin pérdida de calidad.
+	\begin{itemize}
+	\item Dificultad: 5
+	\item Complejidad: 1
+	\item Riesgo: 5
+	\item Story Points: 13
+	\end{itemize}  
+\end{itemize}
+%Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
 
-Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia
+%El formato propuesto es: "como [rol] quiero [tal cosa] para [tal otra cosa]."
+
+%Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia
 \end{consigna}
 
 \section{8. Entregables principales del proyecto}
 \label{sec:entregables}
 
-\begin{consigna}{red}
+\begin{consigna}{black}
 
-Los entregables del proyecto son (ejemplo):
+Los entregables del proyecto son:
 
 \begin{itemize}
-	\item Manual de uso
-	\item Diagrama de circuitos esquemáticos
-	\item Código fuente del firmware
-	\item Diagrama de instalación
-	\item Informe final
-	\item etc...
+	\item Manual de uso.
+	\item Diagrama de circuitos esquemáticos.
+	\item Código fuente del firmware.
+	\item Prototipo funcional (hardware).
+	\item Informe final.
 \end{itemize}
 
 \end{consigna}
@@ -301,35 +353,56 @@ Los entregables del proyecto son (ejemplo):
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
 
-\begin{consigna}{red}
-El WBS debe tener relación directa o indirecta con los requerimientos.  Son todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos. Se recomienda mostrar el WBS mediante una lista indexada:
+\begin{consigna}{black}
+Se observa a continuación el desglose de tareas del proyecto (WBS, Work Breakdown Struture):
 
 \begin{enumerate}
-\item Grupo de tareas 1
+\item Gestión y documentación del proyecto (92 hs).
 	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas h)
+	\item Realización del plan de proyecto (10 hs).
+	\item Control de avance (6 hs).
+	\item Documentación memoria técnica (60 hs).
+	\item Documentación de las pruebas (16 hs).
 	\end{enumerate}
-\item Grupo de tareas 2
+\item Búsqueda de información y adquisiciones (68 hs).
 	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
+	\item Recopilación de información de mercado (10 hs).
+	\item Recopilación de información teórica, normas, documentos y librerías de las interfaces digitales (20 hs).
+	\item Recopilación de información teórica, normas, documentos y librerías de los formatos de audio considerados (20 hs).
+	\item Búsqueda y selección de componentes hardware, módulos y/o placas de evaluación (12 hs).
+	\item Adquisición del hardware seleccionado (6 hs).
 	\end{enumerate}
-\item Grupo de tareas 3
+\item Desarrollo del prototipo (199 hs). 
 	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
-	\item Tarea 4 (tantas h)
-	\item Tarea 5 (tantas h)
+	\item Diseño circuito esquemático para interfaces USB y S/PDIF (20 hs).
+	\item Diseño circuito esquemático para interface Bluetooth (30 hs).
+	\item Diseño circuito esquemático para display, pulsadores y otros (15 hs).
+	\item Validaciones y simulaciones (20 hs). 
+	\item Diseño PCB interfaces (40 hs).
+	\item Diseño PCB display y otros (20 hs).
+	\item Compra de componentes y módulos (4 hs).
+	\item Fabricación de PCBs (20 hs).
+	\item Armado de PCBs (10 hs).
+	\item Desarrollo de firmware de prueba (10 hs).
+	\item Ejecución de pruebas (10 hs).
 	\end{enumerate}
+\item Desarrollo del firmware (230 hs).
+	\begin{enumerate}
+	\item Diseño de la estructura del programa, módulos y máquinas de estado generales (40 hs).
+	\item Desarrollo detallado del firmware para interfaces USB y S/PDIF (40 hs).
+	\item Desarrollo detallado del firmware para interfaces Bluetooth (40 hs).
+	\item Desarrollo detallado del firmware para display y operación (40 hs).
+	\item Diseño y desarrollo detallado de módulos y funciones para manejo de formatos de audio (40 hs).
+	\item Diseño y desarrollo detallado de funciones auxiliares y de depuración (30 hs)
+	\end{enumerate}
+\item Verificación y validación (70 hs).	
+	\begin{enumerate}
+	\item Diseño y ejecución de pruebas unitarias (30 hs).
+	\item Diseño y ejecución de pruebas integrales (40 hs).
+	\end{enumerate}	
 \end{enumerate}
 
-Cantidad total de horas: (tantas h)
-
-Se recomienda que no haya ninguna tarea que lleve más de 40 h. 
+Cantidad total de horas: (659 hs).
 
 \end{consigna}
 
@@ -343,7 +416,7 @@ Armar el AoN a partir del WBS definido en la etapa anterior.
 
 %\url{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ:_A_Tutorial_for_Beginners_(Part_3)\%E2\%80\%94Creating_Flowcharts}
 
-\end{consigna}
+
 
 \begin{figure}[htpb]
 \centering 
@@ -356,7 +429,7 @@ Indicar claramente en qué unidades están expresados los tiempos.
 De ser necesario indicar los caminos semicríticos y analizar sus tiempos mediante un cuadro.
 Es recomendable usar colores y un cuadro indicativo describiendo qué representa cada color, como se muestra en el siguiente ejemplo:
 
-
+\end{consigna}
 
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
