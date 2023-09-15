@@ -1,13 +1,13 @@
 \documentclass[
 11pt, % The default document font size, options: 10pt, 11pt, 12pt
-codirector, % Uncomment to add a codirector to the title page
+%codirector, % Uncomment to add a codirector to the title page
 ]{charter} 
 
 
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{DAC Digital Audio Converter} 
+\titulo{Dispositivo Conversor de Audio Digital-Analógico de Alta Fidelidad} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 \posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -41,7 +41,7 @@ codirector, % Uncomment to add a codirector to the title page
  
 \fechaINICIO{22 de agosto de 2023}		%Fecha de inicio de la cursada de GdP \fechaInicioName
 \fechaFINALPlan{24 de octubre de 2023} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{1 de agosto de 2024}	%Fecha de defensa pública del trabajo final
+\fechaFINALTrabajo{2 de diciembre de 2024}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -93,7 +93,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el desarrollo y la implementación de un prototipo de un dispositivo capaz de convertir diferentes formatos de audio digital en una señal analógica. Tendrá un presupuesto preliminar estimado de 600 hs de trabajo y \textcolor{black}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el desarrollo y la implementación de un prototipo de un dispositivo capaz de convertir diferentes formatos de audio digital en una señal analógica. Tendrá un presupuesto preliminar estimado de 669 hs de trabajo y \textcolor{black}{USD 41.200}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -164,7 +164,7 @@ En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistem
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
+Cliente       & \supname          &\empclientename	&        	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director Trabajo final \\ \hline
 Usuario final & Público general   & -             	& -       	\\ \hline
@@ -209,7 +209,7 @@ Se define el siguiente alcance para el proyecto:
 Quedan fuera del alcance los siguientes items:
 \begin{itemize}
 	\item[•]Desarrollo de firmware para el manejo de formatos de audio digital con pérdidas (codificación/decodificación perceptiva).  
-	\item[•]Diseños mecanicos del dispositivo (gabinetes o envolturas). 	
+	\item[•]Diseños mecánicos del dispositivo (gabinetes o envolturas). 	
 \end{itemize}
 \end{consigna}
 
@@ -234,7 +234,7 @@ Para el desarrollo del presente proyecto se supone que:
 \label{sec:requerimientos}
 
 \begin{consigna}{black}
-Los requerimientos a considerar para el desarrollo del proyecto son los siguientes.
+Los requerimientos a considerar para el desarrollo del proyecto son los siguientes:
 
 \begin{enumerate}
 	\item Requerimientos de interfaces digitales.
@@ -268,8 +268,9 @@ Los requerimientos a considerar para el desarrollo del proyecto son los siguient
 		\end{enumerate}
 	\item Requerimientos de documentación y registro.
 		\begin{enumerate}
-			\item Todos los desarrollos de hardware y firmware deben estar guardados en repositorio y bajo control de versión.
+			\item Todos los desarrollos de hardware y firmware deben estar guardados en un repositorio y bajo control de versión.
 			\item Debe desarrollarse una memoria técnica del prototipo.
+			\item Debe desarrollarse un informe de avance. 
 			\item Deben documentarse todas las pruebas tecnicas diseñadas y sus conclusiones. 
 		\end{enumerate}	
 \end{enumerate}
@@ -280,7 +281,8 @@ Los requerimientos a considerar para el desarrollo del proyecto son los siguient
 \label{sec:backlog}
 
 \begin{consigna}{black}
-A continuación se enumeran las historias de usuarios identificadas. Para todos los casos se ha realizado una ponderación con el siguiente criterio:
+A continuación se enumeran las historias de usuarios identificadas. Para poder medir el tamaño de cada historia se ha realizado una ponderación numérica con base en la serie de Fibonacci 0, 1, 2, 3, 5, 8, 13, 21, 34, 55, .... 
+Los criterios y las ponderaciones consideradas son las siguientes:
 \begin{enumerate}
 	\item Dificultad del trabajo a realizar.
 	\begin{itemize}
@@ -301,36 +303,44 @@ A continuación se enumeran las historias de usuarios identificadas. Para todos 
 		\item ALTO = 8
 	\end{itemize}	
 \end{enumerate}
+Luego, cada historia de usuario obtiene un puntaje (Story Points) que resulta de aproximar la suma de su dificultad, su complejidad y su riesgo al número mas cercano de la serie de Fibonacci.
 
 Historias de usuarios:
 \begin{itemize}
-	\item[•] Como amante de la música en alta calidad deseo escuchar mis canciones favoritas que guardo en mi computadora con mi sistema de audio HiFi.
+	\item[•] Como amante de la música en alta calidad deseo conectar mi computadora con mi sistema de audio HiFi para escuchar mis canciones favoritas que guardo en alta resolución. 
 	\begin{itemize}
 	\item Dificultad: 5
 	\item Complejidad: 13
 	\item Riesgo: 3
-	\item Story Points: 21
+	\item Suma: 21 -- \textbf{Story Points: 21}
 	\end{itemize}
-	\item[•] Como consumidor de plataformas de música por streaming quiero reproducir mis caciones desde el teléfono y poder escucharlas en mi sistema de audio HiFi.
+	\item[•] Como consumidor de plataformas de música por streaming quiero reproducir mis caciones desde el teléfono para escucharlas en mi sistema de audio HiFi.
 	\begin{itemize}
 	\item Dificultad: 13
 	\item Complejidad: 13
 	\item Riesgo: 3
-	\item Story Points: 34
+	\item Suma: 29 -- \textbf{Story Points: 34}
 	\end{itemize}
-	\item[•] Como entusiasta de las películas y los recitales deseo conectar el audio de mi televisor a mi sistema de sonido HiFi sin pérdida de calidad.
+	\item[•] Como entusiasta de las películas y los recitales deseo conectar el audio de mi televisor a mi sistema de sonido HiFi para experimentar el ambiente de una sala de cine.
 	\begin{itemize}
 	\item Dificultad: 5
 	\item Complejidad: 5
 	\item Riesgo: 3
-	\item Story Points: 13
+	\item Suma: 13 -- \textbf{Story Points: 13}
 	\end{itemize}
-	\item[•] Como audiófilo, al reproducir audio digital me interesa conocer la profundidad de bits y la frecuencia de muestreo de la música que estoy escuchando.
+	\item[•] Como audiófilo, al reproducir audio digital me interesa conocer la profundidad de bits y la frecuencia de muestreo de la música que estoy escuchando para poder comparar y entrenar mi percepción musical.
 	\begin{itemize}
 	\item Dificultad: 1
 	\item Complejidad: 2
 	\item Riesgo: 1
-	\item Story Points: 5
+	\item Suma: 4 -- \textbf{Story Points: 5}
+	\end{itemize}
+	\item[•] Como sonidista profesional quiero escuchar las mezclas y ediciones que elaboro en mi estudio para evaluar y corregir mi producción musical.
+	\begin{itemize}
+	\item Dificultad: 8
+	\item Complejidad: 13
+	\item Riesgo: 8
+	\item Suma: 29 -- \textbf{Story Points: 34}
 	\end{itemize}   
 \end{itemize}
 %Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
@@ -351,6 +361,7 @@ Los entregables del proyecto son:
 	\item Diagrama de circuitos esquemáticos.
 	\item Código fuente del firmware.
 	\item Prototipo funcional (hardware).
+	\item Informe de avance.
 	\item Informe final.
 \end{itemize}
 
@@ -363,11 +374,12 @@ Los entregables del proyecto son:
 Se observa a continuación el desglose de tareas del proyecto (WBS, Work Breakdown Struture):
 
 \begin{enumerate}
-\item Gestión y documentación del proyecto (92 hs).
+\item Gestión y documentación del proyecto (102 hs).
 	\begin{enumerate}
 	\item Realización del plan de proyecto (10 hs).
 	\item Control de avance (6 hs).
-	\item Documentación memoria técnica (60 hs).
+	\item Documentación del informe de avance (10 hs).
+	\item Documentación de la memoria técnica (60 hs).
 	\item Documentación de las pruebas (16 hs).
 	\end{enumerate}
 \item Búsqueda de información y adquisiciones (68 hs).
@@ -375,17 +387,17 @@ Se observa a continuación el desglose de tareas del proyecto (WBS, Work Breakdo
 	\item Recopilación de información de mercado (10 hs).
 	\item Recopilación de información teórica, normas, documentos y librerías de las interfaces digitales (20 hs).
 	\item Recopilación de información teórica, normas, documentos y librerías de los formatos de audio considerados (20 hs).
-	\item Búsqueda y selección de componentes hardware, módulos y/o placas de evaluación (12 hs).
+	\item Búsqueda y selección de los componentes hardware, módulos y/o placas de evaluación (12 hs).
 	\item Adquisición del hardware seleccionado (6 hs).
 	\end{enumerate}
 \item Desarrollo del prototipo (199 hs). 
 	\begin{enumerate}
-	\item Diseño circuito esquemático para interfaces USB y S/PDIF (20 hs).
-	\item Diseño circuito esquemático para interface Bluetooth (30 hs).
-	\item Diseño circuito esquemático para display, pulsadores y otros (15 hs).
+	\item Diseño del circuito esquemático para interfaces USB y S/PDIF (20 hs).
+	\item Diseño del circuito esquemático para interface Bluetooth (30 hs).
+	\item Diseño del circuito esquemático para display, pulsadores y otros (15 hs).
 	\item Validaciones y simulaciones (20 hs). 
-	\item Diseño PCB interfaces (40 hs).
-	\item Diseño PCB display y otros (20 hs).
+	\item Diseño del PCB de las interfaces (40 hs).
+	\item Diseño del PCB para el display y otros componentes (20 hs).
 	\item Compra de componentes y módulos (4 hs).
 	\item Fabricación de PCBs (20 hs).
 	\item Armado de PCBs (10 hs).
@@ -408,7 +420,7 @@ Se observa a continuación el desglose de tareas del proyecto (WBS, Work Breakdo
 	\end{enumerate}	
 \end{enumerate}
 
-Cantidad total de horas: (659 hs).
+Cantidad total de horas: (669 hs).
 
 \end{consigna}
 
